@@ -3,7 +3,7 @@ const path = require("path");
 
 const { read_data_async } = require("../utils/file_helper_async");
 
-const dbPath = path.join(__dirname, "db", "podcasts.json"); // Caminho absoluto
+const dbPath = path.join(process.cwd(), "db", "podcasts.json");
 
 const get_all = () => {
   return read_data_async(dbPath);
