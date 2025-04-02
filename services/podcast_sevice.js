@@ -1,9 +1,12 @@
 const https = require("https");
+const path = require("path");
+
 const { read_data_async } = require("../utils/file_helper_async");
-const db = "./db/podcasts.json";
+
+const dbPath = path.join(__dirname, "db", "podcasts.json"); // Caminho absoluto
 
 const get_all = () => {
-  return read_data_async(db);
+  return read_data_async(dbPath);
 };
 
 const get_podcast_by_id = async (id) => {
